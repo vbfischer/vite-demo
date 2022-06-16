@@ -62,7 +62,7 @@ Error generating stack: `+s.message+`
   border: 1px solid black;
 
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(${e=>e.columnCount+1}, auto);
 
   overflow: auto;
   gap: 16px;
@@ -82,6 +82,8 @@ Error generating stack: `+s.message+`
   font-weight: bold;
 
   transition: width 500ms;
+
+  cursor: pointer;
 `,fA=ru.div`
   ${hl};
 
@@ -123,4 +125,4 @@ function print() { __p += __j.call(arguments, '') }
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var pA=Nr.exports,hA=Symbol.for("react.element"),gA=Symbol.for("react.fragment"),vA=Object.prototype.hasOwnProperty,mA=pA.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,yA={key:!0,ref:!0,__self:!0,__source:!0};function am(e,n,r){var u,o={},s=null,f=null;r!==void 0&&(s=""+r),n.key!==void 0&&(s=""+n.key),n.ref!==void 0&&(f=n.ref);for(u in n)vA.call(n,u)&&!yA.hasOwnProperty(u)&&(o[u]=n[u]);if(e&&e.defaultProps)for(u in n=e.defaultProps,n)o[u]===void 0&&(o[u]=n[u]);return{$$typeof:hA,type:e,key:s,ref:f,props:o,_owner:mA.current}}Vs.Fragment=gA;Vs.jsx=am;Vs.jsxs=am;Gs.exports=Vs;const Jr=Gs.exports.jsx,Fg=Gs.exports.jsxs,_A=Gs.exports.Fragment;function wA(){const e=dA({headersCount:5,rowCount:200}),[n,r]=eu.useState(0),u=o=>{r(o)};return console.log(`Exapanded Column is ${n}`),Jr(lA,{children:Fg(oA,{children:[Jr(sA,{children:e.title}),e.headers.map((o,s)=>Jr(aA,{expanded:n===s,id:`${o}-${s}`,onClick:()=>u(s),children:o})),e.rows.map((o,s)=>Fg(_A,{children:[Jr(fA,{children:o.title},`AH-${o.title}-${s}`),o.cells.map((f,p)=>Jr(cA,{children:f},`AV-$[row.title]-${f}-${s}`))]}))]})})}Wf.createRoot(document.getElementById("root")).render(Jr(eu.StrictMode,{children:Jr(wA,{})}));
+ */var pA=Nr.exports,hA=Symbol.for("react.element"),gA=Symbol.for("react.fragment"),vA=Object.prototype.hasOwnProperty,mA=pA.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,yA={key:!0,ref:!0,__self:!0,__source:!0};function am(e,n,r){var u,o={},s=null,f=null;r!==void 0&&(s=""+r),n.key!==void 0&&(s=""+n.key),n.ref!==void 0&&(f=n.ref);for(u in n)vA.call(n,u)&&!yA.hasOwnProperty(u)&&(o[u]=n[u]);if(e&&e.defaultProps)for(u in n=e.defaultProps,n)o[u]===void 0&&(o[u]=n[u]);return{$$typeof:hA,type:e,key:s,ref:f,props:o,_owner:mA.current}}Vs.Fragment=gA;Vs.jsx=am;Vs.jsxs=am;Gs.exports=Vs;const Jr=Gs.exports.jsx,Fg=Gs.exports.jsxs,_A=Gs.exports.Fragment;function wA(){const e=dA({headersCount:10,rowCount:200}),[n,r]=eu.useState(0),u=o=>{r(s=>o===s?void 0:o)};return console.log(`Exapanded Column is ${n}`),Jr(lA,{children:Fg(oA,{columnCount:e.headers.length,children:[Jr(sA,{children:e.title}),e.headers.map((o,s)=>Jr(aA,{expanded:n===s,id:`${o}-${s}`,onClick:()=>u(s),children:o})),e.rows.map((o,s)=>Fg(_A,{children:[Jr(fA,{children:o.title},`AH-${o.title}-${s}`),o.cells.map((f,p)=>Jr(cA,{children:f},`AV-$[row.title]-${f}-${s}`))]}))]})})}Wf.createRoot(document.getElementById("root")).render(Jr(eu.StrictMode,{children:Jr(wA,{})}));
