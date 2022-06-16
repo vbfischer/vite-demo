@@ -47,6 +47,8 @@ export const ColumnHeader = styled.div<{ expanded?: boolean }>`
   font-weight: bold;
 
   transition: width 500ms;
+
+  cursor: pointer;
 `;
 
 export const AnalyteHeader = styled.div`

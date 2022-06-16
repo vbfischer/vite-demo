@@ -12,10 +12,10 @@ import { generateData } from "./utils";
 function App() {
   const data = generateData({headersCount: 10, rowCount: 200});
 
-  const [expandedColumn, setExpandedColumn] = React.useState(0);
+  const [expandedColumn, setExpandedColumn] = React.useState<number | undefined>(0);
 
   const handleHeaderClick = (ndx: number) => {
-    setExpandedColumn(ndx);
+    setExpandedColumn(prev => ndx === prev ? undefined : ndx);
   };
 
   console.log(`Exapanded Column is ${expandedColumn}`);
