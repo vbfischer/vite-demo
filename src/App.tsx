@@ -10,7 +10,7 @@ import {
 import { generateData } from "./utils";
 
 function App() {
-  const data = generateData({headersCount: 5, rowCount: 200});
+  const data = generateData({headersCount: 10, rowCount: 200});
 
   const [expandedColumn, setExpandedColumn] = React.useState(0);
 
@@ -21,7 +21,7 @@ function App() {
   console.log(`Exapanded Column is ${expandedColumn}`);
   return (
     <View>
-      <Container>
+      <Container columnCount={data.headers.length}>
         <ContainerHeader>{data.title}</ContainerHeader>
 
         {data.headers.map((header, ndx) => (

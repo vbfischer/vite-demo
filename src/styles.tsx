@@ -11,7 +11,11 @@ export const View = styled.div`
   justify-content: center;
 `;
 
-export const Container = styled.div`
+export interface ContainerProps {
+    columnCount: number;
+}
+
+export const Container = styled.div<ContainerProps>`
   ${commonStyles};
 
   max-width: 1024px;
@@ -19,7 +23,7 @@ export const Container = styled.div`
   border: 1px solid black;
 
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(${props => props.columnCount + 1}, auto);
 
   overflow: auto;
   gap: 16px;
